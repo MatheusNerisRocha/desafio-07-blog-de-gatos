@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    --color-base-blue: hsl(195, 46%, 40%);
+    --color-base-blue-dark: hsl(195, 91%, 25%);
+    --color-base-white: hsl(0, 0%, 100%);
+    --color-base-blue-light: rgba(255, 255, 255, 0.2);
+    --color-base-black: hsl(240, 5%, 7%);
+}
+
+body {
+    font-size: 1.6rem;
+    font-family: "Mulish", sans-serif;
+}
+
+.page {
+    max-width: 43rem;
+    margin: 0 auto;
+}
+
+header {
+    background-color: var(--color-base-blue-dark);
+    padding: 1.2rem 2.8rem;
+    display: flex;
+    align-items: center;
+    gap: 2.6rem;
+    --startY: -100%;
+    animation: move .2s;
+}
+
+header form {
+    flex: 1;
+}
+
+img {
+    --startY: 100%;
+    animation: move .3s;
+}
+
+img:hover {
+    filter: hue-rotate(7deg) contrast(80%) saturate(160%);
+    transform: scale(.8) rotate(-1deg);
+}
+
+header > img {
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+form label {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+}
+
+form input {
+    width: 100%;
+    padding: 1.2rem 1.6rem 1.2rem 1.4rem;
+    border: 0;
+    border-radius: .4rem;
+    background: var(--color-base-blue-light);
+    --delay: .5s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+form input::placeholder {
+    color: var(--color-base-white);
+    line-height: 100%;
+}
+
+.avatar {
+    width: 4.2rem;
+    height: 4.2rem;
+    border-radius: 50%;
+    object-fit: cover;
+    --delay: .6s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+.image {
+    width: 100%;
+    height: 21.9rem;
+    margin-bottom: 3.1rem;
+    --delay: .4s;
+    animation: appear .4s var(--delay) backwards;
+    }
+
+.padding {
+    padding: 0 2.2rem 2.6rem;
+    --delay: .7s;
+    animation: appear .4s var(--delay) backwards;
+}
+
+h1.title-1{
+    margin-bottom: 3.2rem;
+}
+
+h1.title-1, .title-2 h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    line-height: 160%; 
+}
+
+.title-2 {
+    margin-top: 3.2rem;
+    margin-bottom: 3.2rem;
+}
+
+.button {
+    margin-top: .8rem;
+    margin-bottom: 3.1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+button {
+    background: var(--color-base-blue-dark);
+    border: none;
+    border-radius: 50%;
+    padding: 1.2rem;
+}
+
+.text {
+    max-width: 38.2rem;
+    text-align: justify;
+    color: var(--color-base-black);
+    font-size: 1.6rem;
+    line-height: 160%;
+}
+
+.cats {
+    display: grid;
+    grid-template-columns: 151px 215px;
+    max-width: 38.2rem;
+    max-height: 8.4rem;
+}
+
+.cats img {
+    width: 15.1rem;
+    height: 9rem;
+}
+
+h2 {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 160%;
+    margin-bottom: 0.5rem;
+}
+
+.cats {
+    margin-bottom: 3.2rem;
+}
+
+.text_description  {
+    font-size: 1.1rem;
+    line-height: 160%;
+}
+
+.description  {
+    font-family: 'Mulish';
+    max-width: 215px;
+    height: 8.225rem;
+    padding-left: 1.6rem;
+    padding-right: 2.6rem;
+    --startY: 100%;
+    animation: move .2s;
+}
+
+footer {
+    background-color: var(--color-base-blue);
+    padding: 1.6rem;
+    --startY: 100%;
+    animation: move .2s;
+}
+
+footer p {
+    color: var(--color-base-white);
+    font-weight: 600;
+    text-align: center;
+}
+
+
+@keyframes move {
+    from {
+        transform: translateY(var(--startY));
+    }
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: scale(0.7);
+    }
+
+    50% {
+        transform: scale(1.2);
+    }
+}
+
+@media (min-width: 700px) {
+    .page {
+        max-width: 144rem;
+    }     
+
+    header {
+        padding: 1.2rem 11.2rem;
+        width: 100%;
+    }
+    
+    .image {
+        width: 80.3rem;
+        height: 40.5rem;
+    }
+    
+    .title-1 {
+        display: flex;
+        gap: 366px;
+        align-items: baseline;
+    }
+
+    .text {
+        max-width: 80rem;
+    }
+
+    section {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .astronauts {
+        display: flex;
+        align-items: center;
+        gap: 42.2rem;
+    }
+
+    .content{
+        margin-top: 4.4rem;
+        margin-left: 10.9rem;
+        margin-right: 3.4rem;
+        margin-bottom: 3.9rem;
+    }
+
+    .article {
+        margin-top: 3.6rem;
+
+    }
+
+    .astronauts.padding, .padding { 
+        padding: 0;
+    }
+    
+}
